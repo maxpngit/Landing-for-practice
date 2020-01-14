@@ -1,0 +1,267 @@
+.container {
+    display:inline-block;  /* не растягиваем по ширине на всю страницу */ 
+    position:relative; /* отсчёт координат ведется не от окна браузера, а от блока .container */
+}
+.container div { 
+    display: inline-block; 
+    position: absolute; 
+	top: 75px; left:175px;
+	text-align: center;
+	font-family: helvetica, sans-serif;
+    background-color: rgba(0,0,0,.4); 
+    padding: 5px 5px 5px 10px;
+    color: white;
+	font-size: 36px;
+	font-weight: 400;
+}
+.container ul { 
+    display: inline-block; 
+    position: absolute; 
+	top: 150px; left:300px;
+	font-family: helvetica, sans-serif;
+    background-color: rgba(0,0,0,.4); 
+    padding: 5px 5px 5px 10px;
+    color: white;
+	font-size: 26px;
+	font-weight: 300;
+}
+.container .above:hover {
+    background-color: rgba(106,90,205,.4); /* поведение при наведении на текст */
+	color: cyan;
+}
+.title {
+	margin-top: 50px;
+    /* Прячем часть линий, выходящие за пределы блока */
+    overflow: hidden;
+    /* Выравниваем заголовок по центру, можно указать left, right для выравнивания влево или вправо */
+    text-align: center;
+	/* Размер заголовка */
+	font-family: helvetica, sans-serif;
+    color: #00bbff;
+    font-size: 22px;
+	font-weight: 700;
+}
+.title:before,
+.title:after {
+    /* Свойство content необходимо указывать хотя бы пустое, иначе псевдоэлементы не отобразятся */
+    content: "";
+    /* Свойства линий, выравнивание по центру по вертикали */
+    display: inline-block;
+    vertical-align: middle;
+    /* Ширина - 100% и указываем толщину линии */
+    width: 100%;
+    height: 1px;
+    /* Цвет линии */
+    background-color: #44ccff;
+    /* Возможность для пседоэлементов изменить позицию линии */
+    position: relative;
+}
+.title:before {
+    /* Ставим левую линию слева от текста, смещая ее на 100% влево */
+    margin-left: -100%;
+    /* Отступ линии от заголовка */
+    left: -50px;
+}
+.title:after {
+    /* Ставим правую линию справа от текста, смещая ее на 100% вправо */
+    margin-right: -100%;
+    /* Отступ линии от заголовка */
+    right: -50px;
+}
+p {
+	margin-top: 0px; 
+	margin-bottom: 0px; 
+	background-color: rgba(245,245,245); 
+	display: none;
+	font-family: helvetica, sans-serif;
+    color: gray;
+	font-size: 26px;
+	font-weight: 500;
+}
+a {
+	text-decoration: none;   
+}
+a:hover {
+	text-decoration: none;  
+	color: red;
+	background: linear-gradient(135deg, rgba(215,225,25), rgba(55,255,125));
+} 
+a.letter {
+	background: rgba(160,205,75); /* Цвет фона под заголовком */
+    color: white; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+	float: left;
+	width: 100%;
+	font-family: helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;   
+}
+a.letter:hover {
+    color: white; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+	float: left;
+	width: 100%;
+	font-family: helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;   
+	background: linear-gradient(135deg, rgba(215,225,25), rgba(55,255,125));
+} 
+a.letter:visited {
+    color: white; /* Цвет текста */
+    padding: 10px; /* Поля вокруг текста */
+	float: left;
+	width: 100%;
+	font-family: helvetica, sans-serif;
+	font-size: 24px;
+	font-weight: 500;
+	text-align: center;
+	text-decoration: none;   
+	background: linear-gradient(45deg, rgba(215,225,25), rgba(55,255,125));
+}  
+a img {
+    border: 3px solid lightgray; /* Рамка вокруг ссылок */
+	padding: 2px; /* Расстояние от картинки до рамки */
+    background: gray; /* Цвет фона */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+	border-radius: 5%; /* скругление */
+   }
+a:visited img {
+    border: 3px solid #c716bd; /* Рамка вокруг посещенных ссылок */
+	padding: 2px; /* Расстояние от картинки до рамки */
+    background: cyan; /* Цвет фона */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+   }
+a:hover img {
+    border: 3px solid red; /* Рамка вокруг посещенных ссылок */
+	padding: 2px; /* Расстояние от картинки до рамки */
+    background: red; /* Цвет фона */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+	border-radius: 5%; /* скругление */
+   }
+.main-content img {
+	display:inline-block;
+	vertical-align:top;
+	padding: 5px 5px 5px 10px;
+	float: left;
+}
+.thumbnails
+{
+	/* Компенсируем отступы между float-блоками, чтобы они занимали все доступное пространство */
+	margin: -3em 0 0 -2em;
+	/* Выравнивание по центру */
+	text-align: left;
+}
+.thumbnail
+{
+	/* Убираем подчеркивание у элемента ins, который был использован для совместимости со старыми версиями Internet Explorer */
+	text-decoration: none;
+	/* Следующее правило для Firefox 2 */
+	display: -moz-inline-box;
+	/* а это для остальных */
+	display: inline-block;
+	vertical-align: top;
+	/* Выравнивание по центру */
+	text-align: center;
+	/* Отступы между блоками */
+	margin: 3em 0 0 2em;
+}
+.thumbnail .r
+{
+	/* Задаем минимальную ширину по тексту */
+	width: 20em;
+	/* Минимальная ширина в пикселях будет автоматически рассчитываться по ширине картинки */
+	float: left;
+	position:relative;
+	padding: -2px;
+	background: linear-gradient(45deg, #ffeecc, white);
+	font-family: helvetica, sans-serif;
+    color: #00bbff;
+    font-size: 14px;
+	font-weight: 700;
+	border: 2px solid lightgray;
+	border-radius: 5%; /* скругление */
+}
+.pie-container {
+    background: linear-gradient(45deg, #ffeecc, white);
+	margin-left: 50px;
+    width: 220px; height: 220px;
+    text-align: center;
+	color: rgba(50,50,50);
+    font: 45px/65px helvetica, sans-serif;
+    border: 6px solid rgba(145,215,220);
+    border-right: 6px solid rgba(145,215,220);
+    border-radius: 220px;
+	float: left;
+	}
+.pie {
+    font-size: 0.6em;
+	color: rgba(50,50,50);
+	}
+.block-container {
+    background: linear-gradient(45deg, #ffeecc, white);
+	margin-left: 20px;
+    width: 260px; height: 75px;
+    text-align: center;
+	color: rgba(50,50,50);
+	padding: 5px 5px 5px 10px;
+    font: 24px/24px helvetica, sans-serif;
+    border: 3px solid lightgray;
+    border-radius: 8px;
+	float: left;
+	}
+.block {
+    font-size: 0.8em;
+	color: rgba(50,50,50);
+	}
+.advantages {
+    display:inline-block;  /* не растягиваем по ширине на всю страницу */ 
+    position:relative; /* отсчёт координат ведется не от окна браузера, а от блока .container */
+}
+.advantages div { 
+    display: inline-block; 
+    position: absolute; 
+	top: 65px; left:280px;
+	text-align: center;
+	font-family: helvetica, sans-serif;
+    background-color: rgba(0,0,0,.4); 
+    padding: 5px 5px 5px 10px;
+    color: white;
+	font-size: 36px;
+	font-weight: 600;
+}
+.advantages ul { 
+    display: inline-block; 
+    position: absolute; 
+	top: 100px; left:40px;
+	font-family: helvetica, sans-serif;
+    background-color: rgba(0,0,0,.4); 
+    padding: 5px 5px 5px 10px;
+    color: white;
+	font-size: 21px;
+	font-weight: 500;
+}
+.advantages:hover div {
+    background-color: rgba(106,90,205,.4); /* поведение при наведении на текст */
+	color: cyan;
+}
+.contact
+{
+	background: rgba(160,206,78); /* Цвет фона под заголовком */
+    color: white; /* Цвет текста */
+	padding: 5px;
+ 	font-family: helvetica, sans-serif;
+	text-align: center;
+    font-size: 24px;
+	font-weight: 500;
+	background-image: url(images/letter.png);
+	background-position: left;
+	background-repeat: no-repeat;
+	border-radius: 15%; /* скругление */
+}
